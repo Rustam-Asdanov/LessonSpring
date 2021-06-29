@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Result Page</title>
+</head>
+<body>
+      <p th:text=" ' Your login ' +${customer.login}" />
+      <p th:text=" ' Your age ' + ${customer.age}" />
+      <p th:text=" ${customer.password}">Your password</p>
+</body>
+</html>

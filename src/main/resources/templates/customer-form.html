@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Form</title>
+    <style>
+        .error{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form th:method="get" th:action="@{/customer/showResult}" th:object="${customer}">
+        <label>Login</label>
+        <input type="text" placeholder="input here..." th:field="*{login}"><br>
+        <p th:if="${#fields.hasErrors('login')}" th:errors="*{login}" th:errorclass="error" />
+        <label>Age</label>
+        <input type="text" th:field="*{age}" placeholder="input here..."><br>
+        <p th:if="${#fields.hasErrors('age')}" th:errors="*{age}" th:errorclass="error" />
+        <label>Email</label>
+        <input type="text" th:field="*{email}"><br>
+        <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" th:errorclass="error" />
+        <label>Password</label>
+        <input type="password" th:fields="*{password}" placeholder="input here..."><br>
+        <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}" th:errorclass="error" />
+
+        <input type="submit" value="submit">
+    </form>
+</body>
+</html>
