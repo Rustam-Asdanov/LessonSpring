@@ -8,10 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class CustomerModel {
 
     @GetMapping("/fetchRequest")
-    public Model returnResult(Model model){
-
-        model.addAttribute("name", "Mamed");
-
-        return model;
+    public ExampleModel returnResult(Model model){
+        return new ExampleModel("Vasya", 19);
     }
 }
