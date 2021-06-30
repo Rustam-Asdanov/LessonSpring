@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class CustomerModel {
+public class ExampleController {
 
     @GetMapping("/fetchRequest")
     public ExampleModel returnResult(Model model){
