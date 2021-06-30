@@ -18,13 +18,18 @@
             let message = /*[[${customer.login}]]*/ 'default';
             console.log(message);
         }
-        /*]]>*/
 
-        function getFetch(){
-            fetch('@{')
+
+       function getFetch(){
+            fetch( "/fetchRequest")
                 .then(response => response.json())
                 .then(commits => console.log(commits[0]));
         }
+
+
+        /*]]>*/
+
+
     </script>
 </body>
 </html>
