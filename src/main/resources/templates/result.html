@@ -8,5 +8,23 @@
       <p th:text=" ' Your login ' +${customer.login}" />
       <p th:text=" ' Your age ' + ${customer.age}" />
       <p th:text=" ${customer.password}">Your password</p>
+
+      <input type="button" value="console" onclick="getData()">
+      <input type="button" value="Fetch" onclick="getFetch()">
+
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+        function getData(){
+            let message = /*[[${customer.login}]]*/ 'default';
+            console.log(message);
+        }
+        /*]]>*/
+
+        function getFetch(){
+            fetch('@{')
+                .then(response => response.json())
+                .then(commits => console.log(commits[0]));
+        }
+    </script>
 </body>
 </html>
