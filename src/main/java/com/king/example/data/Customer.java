@@ -17,6 +17,13 @@ public class Customer {
     @Email(message = "you forget @")
     private String email;
 
+    public Customer() {
+    }
+
+    public Customer(String login) {
+        this.login = login;
+    }
+
     public String getEmail() {
         return email;
     }

@@ -23,7 +23,7 @@
        function getFetch(){
             fetch( "/fetchRequest")
                 .then(response => response.json())
-                .then(commits => console.log(commits[0]));
+                .then(commits => console.log(commits.login));
         }
 
 
