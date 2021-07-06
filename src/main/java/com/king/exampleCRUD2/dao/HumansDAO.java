@@ -3,20 +3,22 @@ package com.king.exampleCRUD2.dao;
 import com.king.exampleCRUD2.ConnectionDB;
 import com.king.exampleCRUD2.models.Humans;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class HumansDAO {
     @Autowired
     private ConnectionDB connectionDB;
 
     public void insert(Humans humans){
         String query = String.format(
-                "insert into humans(name,surname,email) values('%s','%s','%s');",
-                humans.getName(),humans.getSurname(),humans.getEmail()
+                "insert into humans(name) values('%s');",
+                humans.getName()
         );
 
         try {
