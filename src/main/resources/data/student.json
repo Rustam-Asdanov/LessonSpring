@@ -1,0 +1,10 @@
+{
+  "name" : "mamed",
+  "surname" : "aliyev",
+  "address" : {
+    "street" : "N.Ismayilov",
+    "city" : "Baku",
+    "country" : "Azerbaijan"
+  },
+  "languages" : ["Azeri","Turkish"]
+}
