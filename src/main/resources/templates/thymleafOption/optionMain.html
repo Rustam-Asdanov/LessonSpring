@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <form th:object="${answer}" th:action="@{/option/getResult}" th:method="GET">
+            <div th:each="i : ${#numbers.sequence(0,4)}">
+                <select th:field="*{answerList}">
+                    <option value="USA">USA</option>
+                    <option value="Belgium">Belgium</option>
+                    <option value="Germany">Germany</option>
+                </select>
+            </div>
+
+            <input type="submit" value="submit">
+        </form>
+</body>
+</html>
