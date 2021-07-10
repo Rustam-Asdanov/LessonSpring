@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpServletRequest;
+
 @Controller
 @RequestMapping("/people")
 public class PeopleController {
@@ -34,5 +36,15 @@ public class PeopleController {
         model.addAttribute("person",personDAO.show(id));
 
         return "people/show";
+    }
+
+    @GetMapping("/info")
+    public String getParam(HttpServletRequest request){
+        String name = request.getParameter("name");
+        String surname = request.getParameter("surname");
+
+        System.out.println(name+ " " + surname);
+
+        return "people/indexs";
     }
 }

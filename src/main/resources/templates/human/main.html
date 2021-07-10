@@ -7,7 +7,7 @@
 <body>
 <div>
 
-    <form th:action="@{/result}" th:method="GET" th:object="${human}">
+    <form th:action="@{/result}" th:method="POST" th:object="${human}">
         <input type="text" th:field="*{name}" placeholder="First name" />
         <input type="text" th:field="*{surname}" placeholder="Last name" />
         <input type="text" th:field="*{email}" placeholder="Email" />
