@@ -23,10 +23,9 @@ public class Human {
     public Human() {
     }
 
-    public Human(String name, String country, Orders human_orders) {
+    public Human(String name, String country) {
         this.name = name;
         this.country = country;
-        this.human_orders = human_orders;
     }
 
     public int getId() {

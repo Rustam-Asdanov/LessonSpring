@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <label> Human table </label>
+    <table>
+      <tr th:each=" h : ${humanList} ">
+        <td>
+          <p th:text="${h.getId()}">id</p>
+        </td>
+        <td>
+          <p th:text="${h.getName()}">first name</p>
+        </td>
+        <td>
+          <p th:text="${h.getEmail()}">email</p>
+        </td>
+        <td>
+          <p th:text="${h.getHuman_orders()}">human_orders</p>
+        </td>
+      </tr>
+    </table>
+
+    <label> Order table </label>
+    <table>
+      <tr th:each=" o : ${orderList} ">
+        <td>
+          <p th:text="${o.getId()}">id</p>
+        </td>
+        <td>
+          <p th:text="${o.getProduct()}">product</p>
+        </td>
+        <td>
+          <p th:text="${o.getCost()}">cost</p>
+        </td>
+      </tr>
+    </table>
+</body>
+</html>
