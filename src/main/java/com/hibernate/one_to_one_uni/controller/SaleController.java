@@ -3,6 +3,8 @@ package com.hibernate.one_to_one_uni.controller;
 import com.hibernate.one_to_one_uni.DAO.SaleDAO;
 import com.hibernate.one_to_one_uni.models.Human;
 import com.hibernate.one_to_one_uni.models.Orders;
+import com.hibernate.one_to_one_uni.repository.HumanRepository;
+import com.hibernate.one_to_one_uni.repository.OrdersRepositories;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,10 +17,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class SaleController {
 
     @Autowired
-    private SaleDAO saleDAO;
+    private HumanRepository humanRepository;
+
+    @Autowired
+    private OrdersRepositories ordersRepositories;
+
+//    @Autowired
+//    private SaleDAO saleDAO;
 
     @GetMapping()
     public String getMainPage(Model model){
+        model.addAttribute("human", new Human());
+        model.addAttribute("orders", new Orders());
         return "hibernate/one-to-one-uni/main";
     }
 
@@ -27,8 +37,15 @@ public class SaleController {
             @ModelAttribute Human human,
             @ModelAttribute Orders orders,
             Model model){
-        model.addAttribute("humanList",saleDAO.getHumanList());
-        model.addAttribute("orderList",saleDAO.getOrdersList());
+//        saleDAO.insertData(human,orders);
+
+        human.setHuman_orders(orders);
+        humanRepository.save(human);
+        ordersRepositories.save(orders);
+
+
+//        model.addAttribute("humanList",saleDAO.getHumanList());
+//        model.addAttribute("orderList",saleDAO.getOrdersList());
 
         return "hibernate/one-to-one-uni/result";
     }

@@ -5,6 +5,7 @@ import javax.persistence.*;
 @Entity
 @Table(name="human")
 public class Human {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
@@ -14,7 +15,7 @@ public class Human {
     private String name;
 
     @Column(name="country")
-    private String country;
+    public String city;
 
     @OneToOne(cascade=CascadeType.ALL)
     @JoinColumn(name="human_orders")
@@ -23,9 +24,9 @@ public class Human {
     public Human() {
     }
 
-    public Human(String name, String country) {
+    public Human(String name, String city) {
         this.name = name;
-        this.country = country;
+        this.city = city;
     }
 
     public int getId() {
@@ -44,12 +45,12 @@ public class Human {
         this.name = name;
     }
 
-    public String getCountry() {
-        return country;
+    public String getCity() {
+        return city;
     }
 
-    public void setCountry(String country) {
-        this.country = country;
+    public void setCity(String city) {
+        this.city = city;
     }
 
     public Orders getHuman_orders() {
@@ -58,15 +59,5 @@ public class Human {
 
     public void setHuman_orders(Orders human_orders) {
         this.human_orders = human_orders;
-    }
-
-    @Override
-    public String toString() {
-        return "Human{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", country='" + country + '\'' +
-                ", human_orders=" + human_orders +
-                '}';
     }
 }

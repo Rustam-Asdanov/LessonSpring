@@ -6,12 +6,12 @@
 </head>
 <body>
   <form th:method="GET" th:action="@{/oneToOne/showResult}">
-    <label>Human form</label>
-    <input type="text" th:field="*{human.name}" placeholder="input your name"><br>
-    <input type="text" th:field="*{human.country}" placeholder="input your country"><br>
+    <label>Human form</label><br>
+    <input type="text" th:field="${human.name}" placeholder="input your name"><br>
+    <input type="text" th:field="${human.city}" placeholder="input your countries"><br><br>
     <label>Order thing</label><br>
-    <input type="text" th:field="*{orders.order}" placeholder="input product name"><br>
-    <input type="text" th:field="*{orders.product}" placehodler="input product cost"><br>
+    <input type="text" th:field="${orders.product}" placeholder="input product name"><br>
+    <input type="text" th:field="${orders.cost}" placeholder="input product cost"><br><br>
     <input type="submit" value="Submit">
   </form>
 </body>

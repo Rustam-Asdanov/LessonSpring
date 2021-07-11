@@ -10,20 +10,22 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 import java.util.Properties;
 
-@Component
+//@Component
 public class SaleDAO {
 
     private SessionFactory factory;
     private Session session;
 
     {
+        /*
         Properties properties = new Properties();
+
+        properties.setProperty("dialect","org.hibernate.dialect.MySQLDialect");
+        properties.setProperty("hibernate.connection.driver_class","com.mysql.cj.jdbc.Driver");
         properties.setProperty("hibernate.connection.url", "jdbc:mysql://localhost:3310/hb-01-one-to-one-uni");
-
-        properties.setProperty("dialect","org.hibernate.dialect.MySQL");
-
         properties.setProperty("hibernate.connection.username","root");
         properties.setProperty("hibernate.connection.password","11111");
+        properties.setProperty("show_sql","true");
 
 
         factory = new Configuration().addProperties(properties)
@@ -31,17 +33,31 @@ public class SaleDAO {
                                     .addAnnotatedClass(Orders.class)
                                     .buildSessionFactory();
 
+        session = factory.openSession();
+
+*/
+
+//        factory = new Configuration().configure("hibernate.cfg.xml")
+//                .addAnnotatedClass(Human.class)
+//                .addAnnotatedClass(Orders.class)
+//                .buildSessionFactory();
         session = factory.getCurrentSession();
+
     }
 
     public void insertData(Human human, Orders orders){
+        System.out.println(human);
         human.setHuman_orders(orders);
 
         session.beginTransaction();
 
         System.out.println("Saving " + human);
 
-        session.save(human);
+        Human theHuman = new Human("Mamedik","Baki");
+        Orders theOrders = new Orders("Laptop","1000$");
+        theHuman.setHuman_orders(theOrders);
+
+        session.save(theHuman);
 
         session.getTransaction().commit();
 
