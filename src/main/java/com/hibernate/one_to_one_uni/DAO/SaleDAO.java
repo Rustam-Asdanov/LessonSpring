@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 import java.util.Properties;
 
-//@Component
+@Component
 public class SaleDAO {
 
     private SessionFactory factory;
@@ -37,10 +37,11 @@ public class SaleDAO {
 
 */
 
-//        factory = new Configuration().configure("hibernate.cfg.xml")
-//                .addAnnotatedClass(Human.class)
-//                .addAnnotatedClass(Orders.class)
-//                .buildSessionFactory();
+        factory = new Configuration().configure("hibernate.cfg.xml")
+                .addAnnotatedClass(Human.class)
+                .addAnnotatedClass(Orders.class)
+                .buildSessionFactory();
+
         session = factory.getCurrentSession();
 
     }

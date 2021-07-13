@@ -1,12 +1,11 @@
 package com.king.exampleCRUD.controllers;
 
 import com.king.exampleCRUD.dao.PersonDAO;
+import com.king.exampleCRUD.models.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -46,5 +45,22 @@ public class PeopleController {
         System.out.println(name+ " " + surname);
 
         return "people/indexs";
+    }
+
+    @GetMapping("/{id}/edit")
+    public String edit(Model model, @PathVariable int id){
+        model.addAttribute("person", personDAO.show(id));
+
+        return "people/edit";
+    }
+
+    @PatchMapping("/{id}")
+    public String update(
+            @ModelAttribute("person") Person person,
+            @PathVariable("id") int id
+    ){
+//        personDAO.update(id,person);
+//
+        return "redirect:/people";
     }
 }

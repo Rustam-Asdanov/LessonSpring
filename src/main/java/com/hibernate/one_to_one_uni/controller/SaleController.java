@@ -22,8 +22,8 @@ public class SaleController {
     @Autowired
     private OrdersRepositories ordersRepositories;
 
-//    @Autowired
-//    private SaleDAO saleDAO;
+    @Autowired
+    private SaleDAO saleDAO;
 
     @GetMapping()
     public String getMainPage(Model model){
@@ -37,11 +37,11 @@ public class SaleController {
             @ModelAttribute Human human,
             @ModelAttribute Orders orders,
             Model model){
-//        saleDAO.insertData(human,orders);
+        saleDAO.insertData(human,orders);
 
-        human.setHuman_orders(orders);
-        humanRepository.save(human);
-        ordersRepositories.save(orders);
+//        human.setHuman_orders(orders);
+//        humanRepository.save(human);
+//        ordersRepositories.save(orders);
 
 
 //        model.addAttribute("humanList",saleDAO.getHumanList());
