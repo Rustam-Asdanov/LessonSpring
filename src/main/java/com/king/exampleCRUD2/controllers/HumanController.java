@@ -39,20 +39,6 @@ public class HumanController {
         return "human/result";
     }
 
-    // example
-//    @GetMapping("/result")
-//    public String getResult(
-//            @Valid @ModelAttribute Humans humans,
-//            BindingResult bindingResult
-//    ){
-//
-//
-//
-//        if(bindingResult.hasErrors()){
-//            return "human/main";
-//        }
-//        humansDAO.insert(humans);
-//        return "human/main";
-//    }
+
 
 }
