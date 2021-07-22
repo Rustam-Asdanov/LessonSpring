@@ -7,9 +7,16 @@
 <body>
     <table>
       <tr th:each="person : ${peopleList}">
+
         <td th:text="${person.id}">Id</td>
         <td th:text="${person.name}">Name</td>
         <td th:text="${person.country}">Country</td>
+        <td>
+          <a th:href="@{/crud4/{id}/edit(id=${person.getId()})}">edit</a>
+        </td>
+        <td>
+          <a th:href="@{/crud4/{id}/delete(id=${person.getId()})}">delete</a>
+        </td>
       </tr>
     </table>
 </body>

@@ -5,19 +5,19 @@ public class Person {
 
     private String name;
 
-    private String coutnry;
+    private String country;
 
     public Person(){}
 
-    public Person(String name, String coutnry) {
+    public Person(String name, String country) {
         this.name = name;
-        this.coutnry = coutnry;
+        this.country = country;
     }
 
-    public Person(int id, String name, String coutnry) {
+    public Person(int id, String name, String country) {
         this.id = id;
         this.name = name;
-        this.coutnry = coutnry;
+        this.country = country;
     }
 
     public int getId() {
@@ -36,11 +36,11 @@ public class Person {
         this.name = name;
     }
 
-    public String getCoutnry() {
-        return coutnry;
+    public String getCountry() {
+        return country;
     }
 
-    public void setCoutnry(String coutnry) {
-        this.coutnry = coutnry;
+    public void setCountry(String country) {
+        this.country = country;
     }
 }
