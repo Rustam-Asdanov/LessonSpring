@@ -58,10 +58,11 @@ public class PersonDAO {
         }
     }
 
-    public void update(Person person){
+    public void update(int id, Person person){
         String query = String.format("update person set name='%s',country='%s' where id=%d;",
-                person.getName(), person.getCountry(), person.getId());
+                person.getName(), person.getCountry(), id);
         try {
+            System.out.println(query);
             connectionDB.getStatement().executeUpdate(query);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
