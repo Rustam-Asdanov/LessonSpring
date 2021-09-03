@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table,tr,td{
+            border: 2px solid black;
+        }
+        td{
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+      <tr th:each="elem : ${elemList}">
+        <td th:text="${elem.id}">id</td>
+        <td th:text="${elem.name}">name</td>
+        <td th:text="${elem.country}">country</td>
+        <td>
+          <a th:href="@{'/fileImage/showImage/' + ${elem.imageName} }" th:text="${elem.imageName}">
+            image Name
+          </a>
+          <a th:href="@{'/fileImage/downloadImage/' + ${elem.imageName} }">Download image</a>
+        </td>
+      </tr>
+    </table>
+</body>
+</html>

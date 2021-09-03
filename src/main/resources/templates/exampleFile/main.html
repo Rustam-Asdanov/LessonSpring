@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <div>
+    <h1>List of Files:</h1>
+      <div th:each="file : ${files}">
+        <a th:href="@{'/newFile/'+${file.getName()}}">
+          <span th:text="${file.getName()}" />
+        </a>
+      </div>
+  </div>
+
+  <form method="POST" enctype="">
+
+  </form>
+</body>
+</html>

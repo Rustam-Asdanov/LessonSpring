@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width:800px;
+            margin:auto;
+        }
+    </style>
+</head>
+<body>
+<!--    <form th:action="@{/image/get-text}" th:method="GET">-->
+<!--        <input type="submit" value="get text">-->
+<!--    </form>-->
+
+<div>
+    <h1>List of Files:</h1>
+    <div th:each="file: ${files}">
+        <a th:href="@{'/file/show/'+${file.getName()}}"><span th:text="${file.getName()}"/></a>
+        <a th:href="@{'/file/load/'+${file.getName()}}">Download</a>
+        <span th:text="${file.length()/1024}"/>KB
+    </div>
+</div>
+
+        <form method="POST" enctype="multipart/form-data" action="/file/uploadImage">
+            <input type="file" name="imageFile">
+            <input type="submit" value="Upload">
+        </form>
+</body>
+</html>

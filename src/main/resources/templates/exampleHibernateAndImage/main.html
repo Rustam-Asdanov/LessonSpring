@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Hibernate And Image</title>
+</head>
+<body>
+    <form th:action="@{/fileImage/addUser}" th:method="POST" enctype="multipart/form-data">
+      <input type="text" name="name" placeholder="input your name"/><br>
+      <input type="text" name="country" placeholder="input your country"/><br>
+      <input type="file" name="image"><br>
+      <input type="submit" value="Add">
+    </form>
+
+    <a th:href="@{/fileImage/openBase}">Go to table</a>
+</body>
+</html>
