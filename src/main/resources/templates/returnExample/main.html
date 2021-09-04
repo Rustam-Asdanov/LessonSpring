@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students😎</title>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        html{
+            font-size: 1.2em;
+            font-family:'Times New Roman', Times, serif;
+            color: wheat;
+        }
+
+        .container{
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+            padding: 15px 30px;
+            border: 3px solid crimson;
+        }
+
+        #register .signUp{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(45deg, yellow,red,green);
+        }
+
+        #register h1{
+            font-size: 1.6rem;
+            color: white;
+            text-align: center;
+            margin: 15px;
+        }
+
+        #register input[type="text"]{
+            border: 3px solid black;
+            margin-left: 10px;
+        }
+
+        #register .signIn{
+            position: absolute;
+            top: 50%;
+            left: 0;
+            height: 50%;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to top left, white,black,grey);
+        }
+
+        input[type="submit"]{
+            padding: 5px 10px;
+            margin: 30px auto;
+            position: relative;
+            left: 50%;
+            color: rgb(85, 38, 38);
+            background: linear-gradient(45deg, purple, yellow,white,red);
+            font-weight: bold;
+            border: 5px solid crimson;
+        }
+
+        input[type="submit"]:hover{
+            background-color: black;
+            color: wheat;
+            background-image: none;
+            transition: 700ms;
+        }
+
+        form label{
+            display: flex;
+            flex-direction:row;
+            justify-content: left;
+        }
+
+        form input{
+            justify-content: left;
+        }
+    </style>
+
+</head>
+
+<body>
+    <section id="register">
+        <div class="signUp container">
+            <h1>Register here</h1>
+            <form th:action="@{/student/getStudentInfo}" th:method="GET" th:object="${newStudent}">
+                <label for="firstName">Input your first name:</label>
+                <input type="text" id="firstName" th:field="*{firstName}"><br>
+
+                <label for="lastName">Input your last name:</label>
+                <input type="text" id="lastName" th:field="*{lastName}"><br>
+
+                <label for="age">Input your age: </label>
+                <input type="number" id="age" th:field="*{age}"><br>
+
+                <label for="email">Input your email: </label>
+                <input type="email" id="email" th:field="*{email}"><br>
+
+                <label for="password">Input your password</label>
+                <input type="password" id="password" th:field="*{password}"><br>
+
+                <input type="submit" value="Sign up">
+            </form>
+        </div>
+
+        <div class="signIn container">
+            <h1>Log in</h1>
+            <form th:action="@{/student/showStudentPage}" th:object="${student}">
+                <label for="emailTwo">Input your email address</label>
+                <input type="text" id="emailTwo" th:field="*{email}"><br>
+
+                <label for="passwordTwo">Input your password</label>
+                <input type="password" id="passwordTwo" th:field="*{password}"><br>
+
+                <input type="submit" value="Sign in">
+            </form>
+        </div>
+    </section>
+</body>
+
+</html>
