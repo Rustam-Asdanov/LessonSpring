@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="/exampleForm/add" method="GET" object="">
+        <label for="name">Input your full name</label>
+        <input type="text" name="fullName" id="name"><br> <!--input type TEXT-->
+
+        <label for="man">Man</label>
+        <input type="radio" name="sex" id="man" value="man">
+        <label for="woman">Woman</label>
+        <input type="radio" name="sex" id="woman" value="woman"><br> <!--input type RADIO -->
+
+        <label for="en">English</label>
+        <input type="checkbox" name="language" id="en" value="English">
+        <label for="gr">German</label>
+        <input type="checkbox" name="language" id="gr" value="German">
+        <label for="tr">Turkish</label>
+        <input type="checkbox" name="language" id="tr" value="Turkish"><br> <!-- input type CHECKBOX -->
+
+        <label for="city">Choose city</label>
+        <select name="cities" id="city">
+          <option value="Baku" selected>Baku</option>
+          <option value="Istanbul">Istanbul</option>
+          <option value="Ankara">Ankara</option>
+          <option value="Quba">Quba</option>
+        </select> <br>                                    <!-- SELECT OPTION -->
+
+        <label for="note">Notes</label>
+        <textarea name="note" rows="10" cols="30" id="note" placeholder="You can add something here">
+
+        </textarea> <br>                                  <!-- TEXT AREA -->
+
+
+        <input type="submit" value="Add">
+    </form>
+</body>
+</html>
