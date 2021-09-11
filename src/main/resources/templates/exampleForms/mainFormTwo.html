@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form th:action="@{/exampleFormer/addTwo}"
+          th:method="GET" th:object="${extra}">
+
+        <label for="name">Name</label>
+        <input type="text" th:field="*{fullName}" id="name"><br>
+
+        <label for="man">Man</label>
+        <input type="radio" th:field="*{sex}" id="man" value="Man">
+        <label for="woman">Woman</label>
+        <input type="radio" th:field="*{sex}" id="woman" value="Man"><br>
+
+        <label for="en">English</label>
+        <input type="checkbox" th:field="*{language}" id="en" value="English">
+        <label for="gr">German</label>
+        <input type="checkbox" th:field="*{language}" id="gr" value="German">
+        <label for="tr">Turkish</label>
+        <input type="checkbox" th:field="*{language}" id="tr" value="Turkish"><br>
+
+        <label for="city">Choose city</label>
+        <select th:field="*{city}" id="city">
+            <option value="Baku" selected>Baku</option>
+            <option value="Istanbul">Istanbul</option>
+            <option value="Ankara">Ankara</option>
+            <option value="Qebele">Qebele</option>
+        </select><br>
+
+        <label for="note">Notes</label><br>
+        <textarea th:field="*{note}" rows="10" cols="30" id="note"
+                  placeholder="Input text"></textarea><br>
+
+        <input type="submit" value="Add">
+    </form>
+</body>
+</html>

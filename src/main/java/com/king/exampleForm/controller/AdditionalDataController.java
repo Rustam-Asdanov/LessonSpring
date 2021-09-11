@@ -5,13 +5,10 @@ import com.king.exampleForm.repository.AdditionalDataRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping("/exampleForm")
+@RequestMapping("/exampleFormer")
 public class AdditionalDataController {
 
     @Autowired
@@ -19,10 +16,10 @@ public class AdditionalDataController {
 
     @GetMapping
     private String getPage(){
-        return "exampleForms/mainForms";
+        return "exampleForms/mainFormOne";
     }
 
-    @GetMapping("/add")
+    @GetMapping("/addOne")
     public String getMain(
             @RequestParam(name = "fullName") String name,
             @RequestParam(name = "sex") String sex,
@@ -37,5 +34,23 @@ public class AdditionalDataController {
         ));
 
         return "redirect:/exampleForm";
+    }
+
+    @GetMapping("/formTwo")
+    public String getPageTwo(Model model){
+        System.out.println("Start");
+        model.addAttribute("extra", new AdditionalData());
+        System.out.println("Continue");
+        return "exampleForms/mainFormTwo";
+    }
+
+    @GetMapping("/addTwo")
+    private String getMainTwo(
+            @ModelAttribute("extraData") AdditionalData additionalData
+    ){
+        System.out.println(additionalData.getCity());
+        addRepository.save(additionalData);
+
+        return "redirect:/exampleFormer/formTwo";
     }
 }
