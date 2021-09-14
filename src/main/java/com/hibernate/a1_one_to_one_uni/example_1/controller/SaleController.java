@@ -1,10 +1,10 @@
-package com.hibernate.one_to_one_uni.controller;
+package com.hibernate.a1_one_to_one_uni.example_1.controller;
 
-import com.hibernate.one_to_one_uni.DAO.SaleDAO;
-import com.hibernate.one_to_one_uni.models.Human;
-import com.hibernate.one_to_one_uni.models.Orders;
-import com.hibernate.one_to_one_uni.repository.HumanRepository;
-import com.hibernate.one_to_one_uni.repository.OrdersRepositories;
+import com.hibernate.a1_one_to_one_uni.example_1.DAO.SaleDAO;
+import com.hibernate.a1_one_to_one_uni.example_1.models.Human;
+import com.hibernate.a1_one_to_one_uni.example_1.models.Orders;
+import com.hibernate.a1_one_to_one_uni.example_1.repository.HumanRepository;
+import com.hibernate.a1_one_to_one_uni.example_1.repository.OrdersRepositories;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

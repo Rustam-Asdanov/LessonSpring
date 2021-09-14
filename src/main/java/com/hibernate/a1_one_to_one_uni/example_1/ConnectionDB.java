@@ -1,9 +1,4 @@
-package com.hibernate.one_to_one_uni;
-
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+package com.hibernate.a1_one_to_one_uni.example_1;
 
 public class ConnectionDB {
 //    private final String URL = "jdbc:mysql://localhost:3310/hb-01-one-to-one-uni";

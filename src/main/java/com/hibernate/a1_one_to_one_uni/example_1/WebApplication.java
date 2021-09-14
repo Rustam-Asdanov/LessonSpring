@@ -1,4 +1,4 @@
-package com.hibernate.one_to_one_uni;
+package com.hibernate.a1_one_to_one_uni.example_1;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

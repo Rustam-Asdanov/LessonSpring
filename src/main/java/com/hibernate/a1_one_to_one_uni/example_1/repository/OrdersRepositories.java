@@ -1,6 +1,6 @@
-package com.hibernate.one_to_one_uni.repository;
+package com.hibernate.a1_one_to_one_uni.example_1.repository;
 
-import com.hibernate.one_to_one_uni.models.Orders;
+import com.hibernate.a1_one_to_one_uni.example_1.models.Orders;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

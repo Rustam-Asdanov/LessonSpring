@@ -1,4 +1,4 @@
-package com.hibernate.one_to_one_uni.models;
+package com.hibernate.a1_one_to_one_uni.example_1.models;
 
 import javax.persistence.*;
 
