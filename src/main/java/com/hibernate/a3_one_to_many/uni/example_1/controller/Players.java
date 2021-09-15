@@ -1,4 +1,4 @@
-package com.hibernate.a3_one_to_many.controller;
+package com.hibernate.a3_one_to_many.uni.example_1.controller;
 
 import javax.persistence.*;
 

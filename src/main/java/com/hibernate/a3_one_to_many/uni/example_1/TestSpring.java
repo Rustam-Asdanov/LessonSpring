@@ -1,9 +1,9 @@
-package com.hibernate.a3_one_to_many;
+package com.hibernate.a3_one_to_many.uni.example_1;
 
 
-import com.hibernate.a3_one_to_many.controller.Players;
-import com.hibernate.a3_one_to_many.controller.Team;
-import com.hibernate.a3_one_to_many.repository.TeamRepository;
+import com.hibernate.a3_one_to_many.uni.example_1.controller.Players;
+import com.hibernate.a3_one_to_many.uni.example_1.controller.Team;
+import com.hibernate.a3_one_to_many.uni.example_1.repository.TeamRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
