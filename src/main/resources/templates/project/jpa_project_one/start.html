@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clubs and Players</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      .container {
+        position: relative;
+        background-image: linear-gradient(
+          60deg,
+          red,
+          yellow,
+          green,
+          pink,
+          blue
+        );
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .container a {
+        width: 150px;
+        height: 150px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        opacity: 0.7;
+        margin: 20px;
+        transition: all 500ms;
+      }
+
+      .container a:nth-child(1) {
+        background-image: url("https://img.icons8.com/color/144/000000/manchester-united-fc.png");
+        background-color: rgba(220, 20, 60, 0.438);
+      }
+
+      .container a:nth-child(2) {
+        background-image: url("https://img.icons8.com/color/144/000000/football-team.png");
+        background-color: rgba(0, 0, 255, 0.438);
+      }
+
+      .container .tooltip {
+        visibility: hidden;
+        width: 150px;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+
+        position: absolute;
+        bottom: 25%;
+        transition: all 700ms;
+      }
+
+      .container a:hover {
+        width: 200px;
+        height: 200px;
+        opacity: 1;
+      }
+
+      .container a:hover .tooltip {
+        width: 200px;
+        visibility: visible;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!--
+    Description
+    There are two blocks
+    --One of them -one to one - with title "add club"
+    --Another one -one to many - with title "add players"
+-->
+    <div class="container">
+      <a href="new_team.html">
+        <span class="tooltip">
+          Add New Team <br />
+          One to One <br />
+          Relationship
+        </span>
+      </a>
+      <a href="new_player.html">
+        <span class="tooltip">
+          Add New Players <br />
+          One to Many <br />
+          Relationship
+        </span>
+      </a>
+    </div>
+  </body>
+</html>
