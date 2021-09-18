@@ -83,4 +83,16 @@ public class Player {
     public void setTeam(Team current_team) {
         this.current_team = current_team;
     }
+
+    @Override
+    public String toString() {
+        return "Player{" +
+                "player_id=" + player_id +
+                ", full_name='" + full_name + '\'' +
+                ", t_shir_number='" + t_shir_number + '\'' +
+                ", position='" + position + '\'' +
+                ", email='" + email + '\'' +
+                ", current_team=" + current_team +
+                '}';
+    }
 }

@@ -11,8 +11,10 @@ public class Team {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "team_id")
     private int team_id;
+
     @Column(name = "team_name")
     private String team_name;
+
     @Column(name = "team_logo")
     private String team_logo;
 
@@ -69,5 +71,16 @@ public class Team {
 
     public void setPlayerList(List<Player> playerList) {
         this.playerList = playerList;
+    }
+
+    @Override
+    public String toString() {
+        return "Team{" +
+                "team_id=" + team_id +
+                ", team_name='" + team_name + '\'' +
+                ", team_logo='" + team_logo + '\'' +
+                ", teamDetail=" + teamDetail +
+                ", playerList=" + playerList +
+                '}';
     }
 }

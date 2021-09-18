@@ -79,4 +79,16 @@ public class TeamDetail {
     public void setTeam(Team team) {
         this.team = team;
     }
+
+    @Override
+    public String toString() {
+        return "TeamDetail{" +
+                "team_detail_id=" + team_detail_id +
+                ", country='" + country + '\'' +
+                ", city='" + city + '\'' +
+                ", fund='" + fund + '\'' +
+                ", president='" + president + '\'' +
+                ", team=" + team +
+                '}';
+    }
 }

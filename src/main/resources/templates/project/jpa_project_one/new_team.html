@@ -79,7 +79,7 @@
   <body>
     <div class="container">
       <div>
-        <form th:action="GET" th:method="@{/addTeam}">
+        <form th:action="@{/team/addTeam}" th:method="GET">
           <h2>Basic Information</h2>
           <label for="team">Team name</label>
           <input type="text" th:value="${team.team_name}" id="team" /><br />
