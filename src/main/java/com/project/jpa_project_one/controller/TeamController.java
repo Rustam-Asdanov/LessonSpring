@@ -35,10 +35,9 @@ public class TeamController {
            @ModelAttribute("team") Team myTeam,
             @ModelAttribute("team_detail") TeamDetail teamDetail
     ){
-//        myTeam.setTeamDetail(teamDetail);
+        myTeam.setTeamDetail(teamDetail);
 
-
-        teamDetail.setTeam(myTeam);
+//        teamDetail.setTeam(myTeam);
 
         teamRepository.save(myTeam);
 

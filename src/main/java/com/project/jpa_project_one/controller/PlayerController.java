@@ -30,7 +30,7 @@ public class PlayerController {
 
         List<Team> teamList = teamRepository.findAll();
 
-        model.addAttribute("team_name", "");
+        model.addAttribute("team_id", "");
         model.addAttribute("teamList", teamList);
         model.addAttribute("player", new Player());
 
@@ -40,16 +40,18 @@ public class PlayerController {
 
     @PostMapping("/addPlayer")
     public String addPlayer(
-            @ModelAttribute("team_name") String teamName,
+            @ModelAttribute("team_id") String teamId,
             @ModelAttribute("player") Player player
     ){
-        System.out.println("Hey : "+teamName);
+        System.out.println("Hey : "+teamId);
 
-        List<Player> playerList = new ArrayList<>();
-        playerList.add(player);
-//        myTeam.setPlayerList(playerList);
+        Team myTeam = teamRepository
+                .findById(Integer.parseInt(teamId))
+                .get();
 
-//        teamRepository.save(myTeam);
+        myTeam.addPlayer(player);
+
+        teamRepository.save(myTeam);
 
         return "redirect:/player";
     }

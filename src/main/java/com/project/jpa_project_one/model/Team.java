@@ -1,6 +1,7 @@
 package com.project.jpa_project_one.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -82,5 +83,15 @@ public class Team {
                 ", teamDetail=" + teamDetail +
                 ", playerList=" + playerList +
                 '}';
+    }
+
+    public void addPlayer(Player thePlayer){
+        if(playerList == null){
+            playerList = new ArrayList<>();
+        }
+
+        playerList.add(thePlayer);
+
+        thePlayer.setTeam(this);
     }
 }

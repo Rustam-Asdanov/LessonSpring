@@ -89,8 +89,8 @@
         <h2>Add your Player</h2>
         <form th:action="@{/player/addPlayer}" th:method="POST">
 
-          <select th:value="${team_name}" name="team_name">
-            <option th:each="t : ${teamList}" th:value="${t.team_name}" th:text="${t.team_name}" selected>Choose Team</option>
+          <select th:value="${team_id}" name="team_id">
+            <option th:each="t : ${teamList}" th:value="${t.team_id}" th:text="${t.team_name}" selected>Choose Team</option>
           </select>
 
           <div>
