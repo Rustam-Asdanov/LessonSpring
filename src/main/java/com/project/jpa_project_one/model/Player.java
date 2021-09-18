@@ -14,7 +14,7 @@ public class Player {
     private String full_name;
 
     @Column(name = "t_shirt_number")
-    private String t_shir_number;
+    private String t_shirt_number;
 
     @Column(name = "position")
     private String position;
@@ -31,7 +31,7 @@ public class Player {
 
     public Player(String full_name, String t_shir_number, String position, String email) {
         this.full_name = full_name;
-        this.t_shir_number = t_shir_number;
+        this.t_shirt_number = t_shir_number;
         this.position = position;
         this.email = email;
     }
@@ -52,12 +52,12 @@ public class Player {
         this.full_name = full_name;
     }
 
-    public String getT_shir_number() {
-        return t_shir_number;
+    public String getT_shirt_number() {
+        return t_shirt_number;
     }
 
-    public void setT_shir_number(String t_shir_number) {
-        this.t_shir_number = t_shir_number;
+    public void setT_shirt_number(String t_shirt_number) {
+        this.t_shirt_number = t_shirt_number;
     }
 
     public String getPosition() {
@@ -89,7 +89,7 @@ public class Player {
         return "Player{" +
                 "player_id=" + player_id +
                 ", full_name='" + full_name + '\'' +
-                ", t_shir_number='" + t_shir_number + '\'' +
+                ", t_shir_number='" + t_shirt_number + '\'' +
                 ", position='" + position + '\'' +
                 ", email='" + email + '\'' +
                 ", current_team=" + current_team +

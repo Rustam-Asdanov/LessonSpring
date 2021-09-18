@@ -87,16 +87,17 @@
     <div class="container">
       <div>
         <h2>Add your Player</h2>
-        <form action="">
-          <select>
-            <option value="" selected>Choose Team</option>
+        <form th:action="@{/player/addPlayer}" th:method="POST">
+
+          <select th:value="${team_name}" name="team_name">
+            <option th:each="t : ${teamList}" th:value="${t.team_name}" th:text="${t.team_name}" selected>Choose Team</option>
           </select>
 
           <div>
-            <input type="text" placeholder="Full Name" />
-            <input type="text" placeholder="Number on T-Shirt" />
-            <input type="text" placeholder="Position" />
-            <input type="email" placeholder="e-mail" />
+            <input type="text" th:field="${player.full_name}" name="full_name" placeholder="Full Name" />
+            <input type="text" th:field="${player.t_shirt_number}" name="t_shirt_number" placeholder="Number on T-Shirt" />
+            <input type="text" th:field="${player.position}" name="position" placeholder="Position" />
+            <input type="email" th:field="${player.email}" name="email" placeholder="e-mail" />
           </div>
           <input type="submit" value="Add" />
         </form>
