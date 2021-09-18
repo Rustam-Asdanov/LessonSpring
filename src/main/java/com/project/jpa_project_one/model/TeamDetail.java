@@ -8,13 +8,18 @@ public class TeamDetail {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "team_detail_id")
     private int team_detail_id;
+    @Column(name = "country")
     private String country;
+    @Column(name = "city")
     private String city;
+    @Column(name = "fund")
     private String fund;
+    @Column(name = "president")
     private String president;
 
-    @OneToOne(mappedBy = "detail_id",cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "teamDetail",cascade = CascadeType.ALL)
     private Team team;
 
     public TeamDetail() {

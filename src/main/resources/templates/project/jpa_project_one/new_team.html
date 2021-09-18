@@ -79,22 +79,22 @@
   <body>
     <div class="container">
       <div>
-        <form th:action="" th:method="">
+        <form th:action="GET" th:method="@{/addTeam}">
           <h2>Basic Information</h2>
           <label for="team">Team name</label>
-          <input type="text" th:value="" id="team" /><br />
+          <input type="text" th:value="${team.team_name}" id="team" /><br />
           <label for="logo">Team Logo</label>
-          <input type="file" name="" id="logo" />
+          <input type="file" th:value="${team.team_logo}" id="logo" />
 
           <h2>Additional Information</h2>
-          <input type="text" placeholder="from country" />
-          <input type="text" placeholder="from city" />
-          <input type="text" placeholder="fund" />
-          <input type="text" placeholder="president" />
+          <input type="text" th:value="${team_detail.country}" placeholder="from country" />
+          <input type="text" th:value="${team_detail.city}" placeholder="from city" />
+          <input type="text" th:value="${team_detail.fund}" placeholder="fund" />
+          <input type="text" th:value="${team_detail.president}" placeholder="president" />
 
           <input type="submit" value="Add" />
         </form>
-        <a href="/start.html"></a>
+        <a th:href="@{/start}">Home</a>
       </div>
     </div>
   </body>

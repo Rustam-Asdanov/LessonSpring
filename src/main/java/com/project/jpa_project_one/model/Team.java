@@ -1,6 +1,7 @@
 package com.project.jpa_project_one.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "team_project_one")
@@ -8,13 +9,19 @@ public class Team {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "team_id")
     private int team_id;
+    @Column(name = "team_name")
     private String team_name;
+    @Column(name = "team_logo")
     private String team_logo;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "detail_id")
     private TeamDetail teamDetail;
+
+    @OneToMany(mappedBy = "current_team", cascade = CascadeType.ALL)
+    private List<Player> playerList;
 
     public Team() {
     }
@@ -54,5 +61,13 @@ public class Team {
 
     public void setTeamDetail(TeamDetail teamDetail) {
         this.teamDetail = teamDetail;
+    }
+
+    public List<Player> getPlayerList() {
+        return playerList;
+    }
+
+    public void setPlayerList(List<Player> playerList) {
+        this.playerList = playerList;
     }
 }
