@@ -2,18 +2,24 @@ package com.project.jpa_project_one.controller;
 
 import com.project.jpa_project_one.model.Team;
 import com.project.jpa_project_one.model.TeamDetail;
+import com.project.jpa_project_one.repository.TeamDetailRepository;
 import com.project.jpa_project_one.repository.TeamRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("/team")
 public class TeamController {
 
+    @Autowired
     private TeamRepository teamRepository;
+
+    @Autowired
+    private TeamDetailRepository teamDetailRepository;
 
     @GetMapping
     public String getTeam(Model model){
@@ -26,15 +32,25 @@ public class TeamController {
 
     @GetMapping("/addTeam")
     public String addTeam(
-            @RequestParam(name = "team") Team myTeam,
-            @RequestParam(name = "team_detail") TeamDetail teamDetail
+           @ModelAttribute("team") Team myTeam,
+            @ModelAttribute("team_detail") TeamDetail teamDetail
     ){
+//        myTeam.setTeamDetail(teamDetail);
+
+
+        teamDetail.setTeam(myTeam);
+
+        teamRepository.save(myTeam);
+
+//        There is some bug when we try save throw detail
+//        myTeam.setTeamDetail(teamDetail);
+//
+//
+//        teamDetailRepository.save(teamDetail); // team does not see detail but detail see team
+
 
         System.out.println(myTeam);
         System.out.println(teamDetail);
-
-        myTeam.setTeamDetail(teamDetail);
-        teamRepository.save(myTeam);
 
         return "redirect:/team";
     }
