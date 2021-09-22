@@ -23,24 +23,24 @@ public class UpdateInstructorDemo {
         InstructorDetail tempInstructorDetail =
                 new InstructorDetail("rutube.com","play darts");
 
-        Instructor tempInstructor = tempInstructorRepository.findById(3).get();
+        Instructor tempInstructor = tempInstructorRepository.findById(1).get();
 
-        System.out.println("We get instructor with id = 3: " + tempInstructor);
+        System.out.println("We get instructor with id = 1: " + tempInstructor);
 
         tempInstructor.setEmail("davidbackham@Gmail.com");
 
         System.out.println("We change his email: " + tempInstructor);
 
-        // set new instructor detail from instructor side
-        tempInstructor.setInstructorDetail(tempInstructorDetail);
-
-        System.out.println("AYE: " +tempInstructor);
-
-        // set new instructor from instructor detail side
-        tempInstructorDetail.setInstructor(tempInstructor);
-
-
-        System.out.println("We associate old instructor with new detail: " + tempInstructorDetail);
+//        // set new instructor detail from instructor side
+//        tempInstructor.setInstructorDetail(tempInstructorDetail);
+//
+//        System.out.println("AYE: " +tempInstructor);
+//
+//        // set new instructor from instructor detail side
+//        tempInstructorDetail.setInstructor(tempInstructor);
+//
+//
+//        System.out.println("We associate old instructor with new detail: " + tempInstructorDetail);
 
 //        tempInstructorRepository.save(tempInstructor);
 

@@ -1,6 +1,6 @@
-package com.hibernate.a2_one_to_one_bi_directional.example_udemy.repository;
+package com.hibernate.a5_eager_vs_lazy.bi.example_udemy.repository;
 
-import com.hibernate.a2_one_to_one_bi_directional.example_udemy.model.Instructor;
+import com.hibernate.a5_eager_vs_lazy.bi.example_udemy.model.Instructor;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

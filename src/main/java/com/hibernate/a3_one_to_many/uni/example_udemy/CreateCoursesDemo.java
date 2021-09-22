@@ -1,11 +1,10 @@
-package com.hibernate.a3_one_to_many.bi.example_udemy;
+package com.hibernate.a3_one_to_many.uni.example_udemy;
 
-import com.hibernate.a3_one_to_many.bi.example_udemy.model.Course;
-import com.hibernate.a3_one_to_many.bi.example_udemy.model.Instructor;
-import com.hibernate.a3_one_to_many.bi.example_udemy.model.InstructorDetail;
-import com.hibernate.a3_one_to_many.bi.example_udemy.repository.CourseRepository;
-import com.hibernate.a3_one_to_many.bi.example_udemy.repository.InstructorDetailRepository;
-import com.hibernate.a3_one_to_many.bi.example_udemy.repository.InstructorRepository;
+import com.hibernate.a3_one_to_many.uni.example_udemy.model.Course;
+import com.hibernate.a3_one_to_many.uni.example_udemy.model.Instructor;
+import com.hibernate.a3_one_to_many.uni.example_udemy.repository.CourseRepository;
+import com.hibernate.a3_one_to_many.uni.example_udemy.repository.InstructorDetailRepository;
+import com.hibernate.a3_one_to_many.uni.example_udemy.repository.InstructorRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;

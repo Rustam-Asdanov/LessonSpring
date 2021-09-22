@@ -1,0 +1,12 @@
+Tomorrow we should create data base section
+1) Create html page
+2) Create table for Team
+3) Create table for Team Detail
+4) Create table for Player
+5) Add delete function near all rows
+6) Add update function near all rows
+7) Add function for download team logo
+8) Add section for opening clubs
+    8.1) There are 4-5 clubs in one row
+    8.2) You select club and it is open club detail
+    8.3) Table with players

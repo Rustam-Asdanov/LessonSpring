@@ -20,7 +20,7 @@ public class GetInstructorDetailDemo {
 
         // get the instructor detail object
 
-        int theId = 2;
+        int theId = 1;
         InstructorDetail tempInstructorDetail =
                 instructorDetailRepository.findById(theId).get();
 

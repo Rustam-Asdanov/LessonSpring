@@ -1,10 +1,10 @@
-package com.hibernate.a3_one_to_many.bi.example_udemy;
+package com.hibernate.a5_eager_vs_lazy.bi.example_udemy.engine;
 
-import com.hibernate.a3_one_to_many.bi.example_udemy.model.Instructor;
-import com.hibernate.a3_one_to_many.bi.example_udemy.model.InstructorDetail;
-import com.hibernate.a3_one_to_many.bi.example_udemy.repository.CourseRepository;
-import com.hibernate.a3_one_to_many.bi.example_udemy.repository.InstructorDetailRepository;
-import com.hibernate.a3_one_to_many.bi.example_udemy.repository.InstructorRepository;
+import com.hibernate.a5_eager_vs_lazy.bi.example_udemy.model.Instructor;
+import com.hibernate.a5_eager_vs_lazy.bi.example_udemy.model.InstructorDetail;
+import com.hibernate.a5_eager_vs_lazy.bi.example_udemy.repository.CourseRepository;
+import com.hibernate.a5_eager_vs_lazy.bi.example_udemy.repository.InstructorDetailRepository;
+import com.hibernate.a5_eager_vs_lazy.bi.example_udemy.repository.InstructorRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -26,10 +26,10 @@ public class CreateInstructorDemo {
 
         // create objects
         Instructor tempInstructor =
-                new Instructor("Zlatan","Ibrahimovic","ibra@gmail.com");
+                new Instructor("Susan","Public","susan.public@gmail.com");
 
         InstructorDetail tempInstructorDetail =
-                new InstructorDetail("http://www.youtube.com/gomez","Taekwando");
+                new InstructorDetail("http://www.youtube.com","Video Games");
 
         tempInstructor.setInstructorDetail(tempInstructorDetail);
         instructorRepository.save(tempInstructor);

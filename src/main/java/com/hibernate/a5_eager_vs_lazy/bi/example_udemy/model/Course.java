@@ -1,4 +1,4 @@
-package com.hibernate.a3_one_to_many.bi.example_udemy.model;
+package com.hibernate.a5_eager_vs_lazy.bi.example_udemy.model;
 
 import javax.persistence.*;
 
@@ -30,7 +30,7 @@ public class Course {
     @Column(name = "title")
     private String title;
 
-    @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.REFRESH,CascadeType.DETACH})
+    @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.REFRESH,CascadeType.DETACH, CascadeType.PERSIST})
     @JoinColumn(name = "instr_id")
     private Instructor instructor;
 
