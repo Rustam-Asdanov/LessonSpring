@@ -1,7 +1,5 @@
 package com.hibernate.a4_many_to_many.uni.example_udemy.model;
 
-import com.hibernate.a4_many_to_many.uni.example_2.model.Student;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -42,7 +40,7 @@ public class Course {
     @JoinColumn(name = "cor_id")
     private List<Review> reviews;
 
-    @ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.REFRESH,CascadeType.DETACH})
+    @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.REFRESH,CascadeType.DETACH})
     @JoinTable(
         name = "course_student",
             joinColumns = @JoinColumn(name = "course_id"),
