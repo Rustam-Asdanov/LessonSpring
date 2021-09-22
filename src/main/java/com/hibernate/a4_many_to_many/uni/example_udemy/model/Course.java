@@ -1,5 +1,7 @@
 package com.hibernate.a4_many_to_many.uni.example_udemy.model;
 
+import com.hibernate.a4_many_to_many.uni.example_2.model.Student;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +42,14 @@ public class Course {
     @JoinColumn(name = "cor_id")
     private List<Review> reviews;
 
+    @ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.REFRESH,CascadeType.DETACH})
+    @JoinTable(
+        name = "course_student",
+            joinColumns = @JoinColumn(name = "course_id"),
+            inverseJoinColumns = @JoinColumn(name = "student_id")
+    )
+    private List<Student> studentList;
+
     public Course() {
     }
 
@@ -79,6 +89,14 @@ public class Course {
         this.reviews = reviews;
     }
 
+    public List<Student> getStudents() {
+        return studentList;
+    }
+
+    public void setStudents(List<Student> students) {
+        this.studentList = students;
+    }
+
     @Override
     public String toString() {
         return "Course{" +
@@ -95,5 +113,14 @@ public class Course {
         }
 
         reviews.add(theReview);
+    }
+
+    // add single student
+    public void addStudent(Student theStudent){
+        if(studentList == null){
+            studentList = new ArrayList<>();
+        }
+
+        studentList.add(theStudent);
     }
 }
