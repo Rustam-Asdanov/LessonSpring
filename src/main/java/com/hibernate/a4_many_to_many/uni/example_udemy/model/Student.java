@@ -16,7 +16,7 @@ public class Student {
     @Column(name = "full_name")
     private String fullName;
 
-    @ManyToMany(fetch = FetchType.EAGER,cascade = {CascadeType.MERGE, CascadeType.REFRESH,CascadeType.DETACH})
+    @ManyToMany(fetch = FetchType.LAZY,cascade = {CascadeType.MERGE, CascadeType.REFRESH,CascadeType.DETACH, CascadeType.PERSIST})
     @JoinTable(
             name = "course_student",
             joinColumns = @JoinColumn(name = "student_id"),
@@ -68,7 +68,7 @@ public class Student {
         return "Student{" +
                 "id=" + id +
                 ", fullName='" + fullName + '\'' +
-                ", courseList=" + courseList +
+
                 '}';
     }
 }

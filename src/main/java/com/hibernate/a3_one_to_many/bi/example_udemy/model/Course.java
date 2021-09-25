@@ -30,7 +30,7 @@ public class Course {
     @Column(name = "title")
     private String title;
 
-    @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.REFRESH,CascadeType.DETACH})
+    @ManyToOne
     @JoinColumn(name = "instr_id")
     private Instructor instructor;
 

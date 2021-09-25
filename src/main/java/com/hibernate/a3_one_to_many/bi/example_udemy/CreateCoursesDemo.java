@@ -27,7 +27,7 @@ public class CreateCoursesDemo {
 
         // get the instructor from db
 
-        int theId=4;
+        int theId=1;
         Instructor tempInstructor = instructorRepository.findById(theId).get();
 
         // create some courses

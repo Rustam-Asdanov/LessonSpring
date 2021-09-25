@@ -40,7 +40,7 @@ public class Course {
     @JoinColumn(name = "cor_id")
     private List<Review> reviews;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.REFRESH,CascadeType.DETACH})
+    @ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.REFRESH,CascadeType.DETACH, CascadeType.PERSIST})
     @JoinTable(
         name = "course_student",
             joinColumns = @JoinColumn(name = "course_id"),
