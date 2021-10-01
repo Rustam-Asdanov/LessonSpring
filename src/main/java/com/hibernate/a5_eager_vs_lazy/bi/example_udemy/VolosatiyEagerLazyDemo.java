@@ -38,7 +38,7 @@ public class VolosatiyEagerLazyDemo {
 
             // get the instructor from db
             int theId = 1;
-            Instructor tempInstructor = session.get(Instructor.class, theId);
+            Instructor tempInstructor = (Instructor) session.get(Instructor.class, theId);
 
             System.out.println("Instructor: " + tempInstructor);
 

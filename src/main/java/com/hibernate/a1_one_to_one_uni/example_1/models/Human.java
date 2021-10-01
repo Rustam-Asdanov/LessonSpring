@@ -14,7 +14,7 @@ public class Human {
     @Column(name="name")
     private String name;
 
-    @Column(name="country")
+    @Column(name="city")
     public String city;
 
     @OneToOne(cascade=CascadeType.ALL)

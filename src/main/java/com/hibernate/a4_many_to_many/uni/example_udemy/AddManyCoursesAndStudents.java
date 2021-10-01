@@ -23,7 +23,7 @@ public class AddManyCoursesAndStudents {
 //
 //        session.save(tempStudent);
 
-        Student tempStudentNew = session.get(Student.class,5);
+        Student tempStudentNew = (Student) session.get(Student.class,5);
 
         System.out.println("New Student: " + tempStudentNew);
 
