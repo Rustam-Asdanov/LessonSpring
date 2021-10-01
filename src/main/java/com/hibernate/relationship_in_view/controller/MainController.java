@@ -43,6 +43,8 @@ public class MainController {
         model.addAttribute("student", new Student());
         model.addAttribute("student_detail",new StudentDetail());
         model.addAttribute("teacher", new Teacher());
+        model.addAttribute("lessons",lessonsRepository.findAll());
+        model.addAttribute("students",studentRepository.findAll());
 
         return "relationship_in_view/main";
     }
@@ -78,6 +80,14 @@ public class MainController {
         theTeacher.addLesson(lessonThree);
 
         teacherRepository.save(theTeacher);
+
+        return "redirect:/main";
+    }
+
+    @GetMapping("/addSchedule")
+    public String addSchedule(){
+
+
 
         return "redirect:/main";
     }

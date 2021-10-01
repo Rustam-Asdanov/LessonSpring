@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <section id="container-one">
@@ -52,31 +53,72 @@
           /><br />
           <h3>Lessons</h3>
           <label for="lesson_one">Lesson One</label>
-          <input
-            type="text"
-            id="lesson_one"
-            name="lesson_one"
-          /><br />
+          <input type="text" id="lesson_one" name="lesson_one" /><br />
           <label for="lesson_two">Lesson Two</label>
-          <input
-            type="text"
-            id="lesson_two"
-            name="lesson_two"
-          /><br />
+          <input type="text" id="lesson_two" name="lesson_two" /><br />
           <label for="lesson_three">Lesson Three</label>
-          <input
-            type="text"
-            id="lesson_three"
-            name="lesson_three"
-          /><br />
+          <input type="text" id="lesson_three" name="lesson_three" /><br />
 
           <input type="submit" value="New Teacher" />
         </form>
       </div>
 
       <div class="box-three">
-          
+        <form th:action="@{/main/addSchedule}" th:method="GET">
+          <div class="box_in">
+            <div>
+              <h2>Students</h2>
+              <label for="student_one">Student one</label>
+              <select name="student_one" id="student_one">
+                <option th:each="s : ${students}">
+                  choose student
+                </option></select
+              ><br />
+
+              <label for="student_two">Student two</label>
+              <select name="student_two" id="student_two">
+                <option th:each="s : ${students}">
+                  choose student
+                </option></select
+              ><br />
+
+              <label for="student_three">Student three</label>
+              <select name="student_three" id="student_three">
+                <option th:each="s : ${students}">
+                  choose student
+                </option></select
+              ><br />
+            </div>
+
+            <div>
+              <h2>Lessons</h2>
+              <label for="lesson_one">Lesson one</label>
+              <select name="lesson_one" id="lesson_one">
+                <option th:each="l : ${lessons}">
+                  choose lesson
+                </option></select
+              ><br />
+
+              <label for="lesson_two">Lesson two</label>
+              <select name="lesson_two" id="lesson_two">
+                <option th:each="l : ${lessons}">
+                  choose lesson
+                </option></select
+              ><br />
+
+              <label for="lesson three">Lesson three</label>
+              <select name="lesson_three" id="lesson_three">
+                <option th:each="l : ${lessons}">
+                  choose lesson
+                </option></select
+              ><br />
+            </div>
+
+            <input type="submit" value="Create schedule" />
+          </div>
+        </form>
       </div>
+
       <div></div>
     </section>
   </body>

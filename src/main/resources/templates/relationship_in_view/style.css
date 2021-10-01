@@ -13,11 +13,12 @@
   background: linear-gradient(45deg, yellow, orange, red, purple);
   padding: 15px 30px;
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 250px 250px 350px;
 }
 
 .box-one,
-.box-two {
+.box-two,
+.box-three {
   position: relative;
   width: 200px;
   background-color: rgba(173, 216, 230, 0.582);
@@ -38,4 +39,14 @@ input[type="submit"]:hover {
 
 h3 {
   color: darkblue;
+}
+
+.box-three {
+  width: 300px;
+  align-items: center;
+}
+
+.box-three .box_in {
+  display: grid;
+  grid-template-columns: auto auto;
 }
