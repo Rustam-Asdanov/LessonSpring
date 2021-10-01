@@ -11,6 +11,9 @@ import java.util.List;
 @Data
 public class Lessons {
 
+    {
+        System.out.println("Lessons");
+    }
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -28,6 +31,7 @@ public class Lessons {
             inverseJoinColumns = @JoinColumn(name = "student_id")
     )
     private List<Student> studentList;
+
 
     public Lessons() {
     }

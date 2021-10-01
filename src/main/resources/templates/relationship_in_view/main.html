@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+  </head>
+  <body>
+    <section id="container-one">
+      <div class="box-one">
+        <form th:action="@{/main/addStudent}" th:method="GET">
+          <h2>One - to - one</h2>
+          <h3>Student</h3>
+          <label for="student_name">Student name</label>
+          <input
+            type="text"
+            id="student_name"
+            th:field="${student.fullName}"
+            placeholder="input..."
+          /><br />
+
+          <h3>Student details</h3>
+
+          <label for="student_address">Student address</label>
+          <input
+            type="text"
+            id="student_address"
+            th:field="${student_detail.address}"
+          /><br />
+          <label for="student_number">Student number</label>
+          <input
+            type="text"
+            id="student_number"
+            th:field="${student_detail.number}"
+          /><br />
+
+          <input type="submit" value="New Student" />
+        </form>
+      </div>
+
+      <div class="box-two">
+        <form th:action="@{/main/addTeacher}" th:method="GET">
+          <h2>One - to - many</h2>
+          <h3>Teacher</h3>
+          <label for="teacher_name">Teacher Name</label>
+          <input
+            type="text"
+            id="teacher_name"
+            th:field="${teacher.fullName}"
+          /><br />
+          <h3>Lessons</h3>
+          <label for="lesson_one">Lesson One</label>
+          <input
+            type="text"
+            id="lesson_one"
+            name="lesson_one"
+          /><br />
+          <label for="lesson_two">Lesson Two</label>
+          <input
+            type="text"
+            id="lesson_two"
+            name="lesson_two"
+          /><br />
+          <label for="lesson_three">Lesson Three</label>
+          <input
+            type="text"
+            id="lesson_three"
+            name="lesson_three"
+          /><br />
+
+          <input type="submit" value="New Teacher" />
+        </form>
+      </div>
+
+      <div class="box-three">
+          
+      </div>
+      <div></div>
+    </section>
+  </body>
+</html>

@@ -9,13 +9,17 @@ import javax.persistence.*;
 @Table
 public class StudentDetail {
 
+    {
+        System.out.println("Student detail");
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String address;
     private String number;
 
-    @OneToOne(mappedBy = "studentDetail")
+    @OneToOne(mappedBy = "studentDetail", cascade = CascadeType.ALL)
     private Student student;
 
     public StudentDetail() {

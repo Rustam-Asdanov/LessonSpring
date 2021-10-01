@@ -10,12 +10,17 @@ import java.util.List;
 @Data
 @Table
 public class Student {
+
+    {
+        System.out.println("Student");
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String fullName;
 
-    @OneToMany
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "student_detail_id")
     private StudentDetail studentDetail;
 

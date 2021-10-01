@@ -12,6 +12,10 @@ import java.util.List;
 @Table
 public class Teacher {
 
+    {
+        System.out.println("teacher");
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
