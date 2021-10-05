@@ -64,27 +64,28 @@
       </div>
 
       <div class="box-three">
+        <h2>Many-to-Many</h2>
         <form th:action="@{/main/addSchedule}" th:method="GET">
           <div class="box_in">
             <div>
               <h2>Students</h2>
               <label for="student_one">Student one</label>
               <select name="student_one" id="student_one">
-                <option th:each="s : ${students}">
+                <option th:each="s : ${students}" th:text="${s.fullName}" th:value="${s.id}">
                   choose student
                 </option></select
               ><br />
 
               <label for="student_two">Student two</label>
               <select name="student_two" id="student_two">
-                <option th:each="s : ${students}">
+                <option th:each="s : ${students}" th:text="${s.fullName}" th:value="${s.id}">
                   choose student
                 </option></select
               ><br />
 
               <label for="student_three">Student three</label>
               <select name="student_three" id="student_three">
-                <option th:each="s : ${students}">
+                <option th:each="s : ${students}" th:text="${s.fullName}" th:value="${s.id}">
                   choose student
                 </option></select
               ><br />
@@ -92,23 +93,23 @@
 
             <div>
               <h2>Lessons</h2>
-              <label for="lesson_one">Lesson one</label>
-              <select name="lesson_one" id="lesson_one">
-                <option th:each="l : ${lessons}">
+              <label for="less_one">Lesson one</label>
+              <select name="lesson_one" id="less_one">
+                <option th:each="l : ${lessons}" th:text="${l.topic}" th:value="${l.id}">
                   choose lesson
                 </option></select
               ><br />
 
-              <label for="lesson_two">Lesson two</label>
-              <select name="lesson_two" id="lesson_two">
-                <option th:each="l : ${lessons}">
+              <label for="less_two">Lesson two</label>
+              <select name="lesson_two" id="less_two">
+                <option th:each="l : ${lessons}" th:text="${l.topic}" th:value="${l.id}">
                   choose lesson
                 </option></select
               ><br />
 
-              <label for="lesson three">Lesson three</label>
-              <select name="lesson_three" id="lesson_three">
-                <option th:each="l : ${lessons}">
+              <label for="less_three">Lesson three</label>
+              <select name="lesson_three" id="less_three">
+                <option th:each="l : ${lessons}" th:text="${l.topic}" th:value="${l.id}">
                   choose lesson
                 </option></select
               ><br />

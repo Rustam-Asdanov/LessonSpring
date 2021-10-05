@@ -85,8 +85,43 @@ public class MainController {
     }
 
     @GetMapping("/addSchedule")
-    public String addSchedule(){
+    public String addSchedule(
+            @RequestParam("student_one") String student_one,
+            @RequestParam("student_two") String student_two,
+            @RequestParam("student_three") String student_three,
+            @RequestParam("lesson_one") String lesson_one,
+            @RequestParam("lesson_two") String lesson_two,
+            @RequestParam("lesson_three") String lesson_three
+    ){
 
+
+       Student studentOne = studentRepository.findById(Integer.parseInt(student_one)).get();
+
+       Lessons lessonOne = lessonsRepository.findById(Integer.parseInt(lesson_one)).get();
+
+       lessonOne.addStudent(studentOne);
+
+       lessonsRepository.save(lessonOne);
+
+        Student studentTwo = studentRepository.findById(Integer.parseInt(student_two)).get();
+
+        Lessons lessonTwo = lessonsRepository.findById(Integer.parseInt(lesson_two)).get();
+
+        lessonTwo.addStudent(studentTwo);
+
+        lessonsRepository.save(lessonTwo);
+
+        Student studentThree = studentRepository.findById(Integer.parseInt(student_three)).get();
+
+        Lessons lessonThree = lessonsRepository.findById(Integer.parseInt(lesson_three)).get();
+
+        lessonThree.addStudent(studentThree);
+
+        lessonsRepository.save(lessonThree);
+
+        System.out.println(lesson_one + " " + lesson_two + " " +lesson_three);
+
+        System.out.println("Success");
 
 
         return "redirect:/main";

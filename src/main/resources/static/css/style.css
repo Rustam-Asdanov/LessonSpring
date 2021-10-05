@@ -24,7 +24,6 @@
   background-color: rgba(173, 216, 230, 0.582);
   text-align: center;
   padding: 10px 20px;
-
 }
 
 input[type="submit"] {
@@ -43,7 +42,7 @@ h3 {
 }
 
 .box-three {
-  width: 300px;
+  width: 400px;
   align-items: center;
 }
 
