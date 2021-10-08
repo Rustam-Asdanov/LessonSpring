@@ -19,7 +19,7 @@ public class MyDemoLoggingAspect {
         System.out.println("\n=======>>> Executing @Before advice on addAccount");
     }
 
-    @Before("execution(public void removeAccount())")
+    @Before("execution( * remove*())")
     public void afrerRemoveAccountAdvice(){
         System.out.println("\n\nxuy udalish\n\n");
     }
