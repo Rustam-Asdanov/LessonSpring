@@ -8,6 +8,7 @@ import com.hibernate.relationship_in_view.repository.LessonsRepository;
 import com.hibernate.relationship_in_view.repository.StudentDetailRepository;
 import com.hibernate.relationship_in_view.repository.StudentRepository;
 import com.hibernate.relationship_in_view.repository.TeacherRepository;
+import com.hibernate.relationship_in_view.service.BaseService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,19 +23,10 @@ import java.util.List;
 @RequestMapping("/main")
 public class MainController {
 
-    private LessonsRepository lessonsRepository;
-    private StudentRepository studentRepository;
-    private StudentDetailRepository studentDetailRepository;
-    private TeacherRepository teacherRepository;
+    private BaseService baseService;
 
-    public MainController(LessonsRepository lessonsRepository,
-                          StudentRepository studentRepository,
-                          StudentDetailRepository studentDetailRepository,
-                          TeacherRepository teacherRepository) {
-        this.lessonsRepository = lessonsRepository;
-        this.studentRepository = studentRepository;
-        this.studentDetailRepository = studentDetailRepository;
-        this.teacherRepository = teacherRepository;
+    public MainController(BaseService baseService) {
+        this.baseService = baseService;
     }
 
     @GetMapping
@@ -43,8 +35,8 @@ public class MainController {
         model.addAttribute("student", new Student());
         model.addAttribute("student_detail",new StudentDetail());
         model.addAttribute("teacher", new Teacher());
-        model.addAttribute("lessons",lessonsRepository.findAll());
-        model.addAttribute("students",studentRepository.findAll());
+        model.addAttribute("lessons",baseService.getLessons());
+        model.addAttribute("students",baseService.getStudents());
 
         return "relationship_in_view/main";
     }
@@ -55,7 +47,7 @@ public class MainController {
             @ModelAttribute("student_detail") StudentDetail theStudentDetail
     ){
         theStudent.setStudentDetail(theStudentDetail);
-        studentRepository.save(theStudent);
+        baseService.addStudent(theStudent);
 
 
         return "redirect:/main";
@@ -79,7 +71,7 @@ public class MainController {
         theTeacher.addLesson(lessonTwo);
         theTeacher.addLesson(lessonThree);
 
-        teacherRepository.save(theTeacher);
+        baseService.addTeacher(theTeacher);
 
         return "redirect:/main";
     }
@@ -95,29 +87,31 @@ public class MainController {
     ){
 
 
-       Student studentOne = studentRepository.findById(Integer.parseInt(student_one)).get();
+       Student studentOne = baseService.getStudentById(Integer.parseInt(student_one));
 
-       Lessons lessonOne = lessonsRepository.findById(Integer.parseInt(lesson_one)).get();
+       Lessons lessonOne = baseService.getLessonById(Integer.parseInt(lesson_one));
 
        lessonOne.addStudent(studentOne);
 
-       lessonsRepository.save(lessonOne);
+       baseService.addLesson(lessonOne);
 
-        Student studentTwo = studentRepository.findById(Integer.parseInt(student_two)).get();
+        Student studentTwo = baseService.getStudentById(Integer.parseInt(student_two));
 
-        Lessons lessonTwo = lessonsRepository.findById(Integer.parseInt(lesson_two)).get();
+        Lessons lessonTwo = baseService.getLessonById(Integer.parseInt(lesson_two));
 
         lessonTwo.addStudent(studentTwo);
 
-        lessonsRepository.save(lessonTwo);
+        baseService.addLesson(lessonTwo);
 
-        Student studentThree = studentRepository.findById(Integer.parseInt(student_three)).get();
+        Student studentThree = baseService.getStudentById(Integer.parseInt(student_three));
 
-        Lessons lessonThree = lessonsRepository.findById(Integer.parseInt(lesson_three)).get();
+        Lessons lessonThree = baseService.getLessonById(Integer.parseInt(lesson_three));
+        System.out.println("Lesson three is " + lessonThree.getTopic());
+        System.out.println("lesson by topic"+ baseService.getLessonByTopic("it").getId());
 
         lessonThree.addStudent(studentThree);
 
-        lessonsRepository.save(lessonThree);
+        baseService.addLesson(lessonThree);
 
         System.out.println(lesson_one + " " + lesson_two + " " +lesson_three);
 

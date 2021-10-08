@@ -6,4 +6,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface LessonsRepository extends JpaRepository<Lessons,Integer> {
+    Lessons getLessonsById(int id);
+
+    Lessons getLessonsByTopic(String topic);
 }
