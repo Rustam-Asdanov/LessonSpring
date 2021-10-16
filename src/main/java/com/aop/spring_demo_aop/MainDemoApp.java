@@ -14,7 +14,7 @@ public class MainDemoApp {
         AccountDAO theAccountDao = context.getBean("accountDAO",AccountDAO.class);
 
         // call the business method
-        theAccountDao.addAccount();
+        theAccountDao.addAccount(1);
 
 
         theAccountDao.removeAccount();
@@ -23,7 +23,7 @@ public class MainDemoApp {
         System.out.println("\n let's do it again");
 
         // call the business method again
-        theAccountDao.addAccount();
+        theAccountDao.addAccount(2);
 
 
 

@@ -79,4 +79,10 @@ public class BaseService {
     public Lessons getLessonByTopic(String topic){
         return lessonsRepository.getLessonsByTopic(topic);
     }
+
+    public StudentDetail getStudentDetailById(int id){
+        return studentDetailRepository.getStudentDetailById(id);
+    }
+
+
 }
