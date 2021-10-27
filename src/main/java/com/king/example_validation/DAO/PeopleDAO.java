@@ -23,4 +23,16 @@ public class PeopleDAO {
     public List<People> getPeopleList() {
         return peopleList;
     }
+
+    public void deleteElem(int id){
+        peopleList.remove(id);
+    }
+
+    public void savePeople(People thePeople, int theId) {
+        peopleList.set(theId, thePeople);
+    }
+
+    public People getPeople(int theId) {
+        return peopleList.get(theId);
+    }
 }

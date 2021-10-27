@@ -12,15 +12,20 @@
       <th>Full name</th>
       <th>Country</th>
       <th>Phone number</th>
+      <th>Function</th>
+      <th>Function two</th>
     </tr>
     <tr th:each="elem : ${peopleList}">
       <td th:text="${elem.id}"></td>
       <td th:text="${elem.fullName}"></td>
       <td th:text="${elem.country}"></td>
       <td th:text="${elem.number}"></td>
+      <td><a th:href="@{/page/delete/{id}(id=${elem.getId()})}">Delete</a></td>
+      <td><a th:href="@{/page/edit/{id}(id=${elem.getId()})}">Edit</a></td>
     </tr>
   </table>
 
   <a th:href="@{/page}">Back</a>
+
 </body>
 </html>

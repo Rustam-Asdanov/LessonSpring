@@ -19,8 +19,12 @@
         <input id="phone" type="text" th:field="*{number}" placeholder="input phone"><br>
 
         <input type="submit" value="Submit">
+        <button>
+            <a th:href="@{/page/save}">Edit</a>
+        </button>
     </form>
 
     <a th:href="@{/page/showBase}">Base</a>
+    <img src="img/index.jpg">
 </body>
 </html>
