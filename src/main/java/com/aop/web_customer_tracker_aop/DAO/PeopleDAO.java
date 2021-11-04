@@ -1,6 +1,6 @@
-package com.king.example_validation.DAO;
+package com.aop.web_customer_tracker_aop.DAO;
 
-import com.king.example_validation.model.People;
+import com.aop.web_customer_tracker_aop.model.People;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -35,4 +35,28 @@ public class PeopleDAO {
     public People getPeople(int theId) {
         return peopleList.get(theId);
     }
+
+//    @Autowired
+//    private Configuration configuration;
+
+
+//    public void addPeopleNew(People people){
+//
+//        this.configuration.configure("hibernate.cfg.xml")
+//                        .addAnnotatedClass(People.class);
+//
+//       SessionFactory sessionFactory = configuration.buildSessionFactory();
+//
+//       Session session = sessionFactory.openSession();
+//
+//        Transaction tx = session.beginTransaction();
+//
+//       session.save(people);
+//
+//       tx.commit();
+//
+//       session.close();
+//
+//
+//    }
 }

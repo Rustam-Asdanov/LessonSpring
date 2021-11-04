@@ -1,7 +1,7 @@
-package com.king.example_validation.controller;
+package com.king.example_by_id.controller;
 
-import com.king.example_validation.DAO.PeopleDAO;
-import com.king.example_validation.model.People;
+import com.king.example_by_id.DAO.PeopleDAO;
+import com.king.example_by_id.model.People;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -65,6 +65,7 @@ public class PeopleController {
     public String saveFunction(
             @ModelAttribute(name="people") People thePeople
     ){
+
 
         System.out.println(thePeople.getFullName());
         peopleDAO.savePeople(thePeople,theId);

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form th:action="@{/customer/add}" th:method="GET" th:object="${theCustomer}">
+        <label for="firstName">First name</label>
+        <input id="firstName" type="text" th:field="*{firstName}" placeholder="...">
+        <p th:if="${#fields.hasErrors('firstName')}" th:error="*{firstName}">invalid first name</p>
+
+
+        <label for="lastName">Last name</label>
+        <input id="lastName" type="text" th:field="*{lastName}" placeholder="...">
+        <p th:if="${#fields.hasErrors('lastName')}" th:error="*{lastName}">invalid last name</p>
+
+        <input type="submit" value="Add">
+
+    </form>
+</body>
+</html>

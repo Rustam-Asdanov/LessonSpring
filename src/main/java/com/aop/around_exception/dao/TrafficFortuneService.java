@@ -1,13 +1,11 @@
-package com.aop.after_throwing.dao;
+package com.aop.around_exception.dao;
 
-import com.aop.after_throwing.model.Account;
-import org.springframework.stereotype.Component;
+import com.aop.around_exception.model.Account;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
-public class AccountDAO {
+public class TrafficFortuneService {
 
     // add a new method: findAccounts()
 

@@ -2,10 +2,7 @@ package com.aop.after_throwing.aspect;
 
 import com.aop.after_throwing.model.Account;
 import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.annotation.AfterReturning;
-import org.aspectj.lang.annotation.AfterThrowing;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Pointcut;
+import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -17,6 +14,13 @@ public class AspectDemo {
 
     @Pointcut("execution(* com.aop.after_throwing.dao.AccountDAO.findAccounts(..))")
     public void pointFunction(){}
+
+    @After("pointFunction()")
+    public void afterFinallyFindAccountsAdvice(JoinPoint theJoinPoint){
+        // print out which method we are advising on
+        String method = theJoinPoint.getSignature().toShortString();
+        System.out.println("\n=====>>> Execution @After (finally) on method: " + method);
+    }
 
     @AfterThrowing(
             pointcut = "pointFunction()",

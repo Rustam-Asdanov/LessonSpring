@@ -1,4 +1,4 @@
-package com.king.example_validation.model;
+package com.king.example_by_id.model;
 
 public class People {
 

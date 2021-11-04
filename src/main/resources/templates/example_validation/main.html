@@ -8,15 +8,15 @@
 
     <p th:text="${message}"></p>
 
-    <form th:action="@{/page/add}" th:method="get" th:object="${people}">
+    <form th:action="@{/page/add}" th:method="get">
         <label for="fullName">Full Name:</label>
-        <input id="fullName" type="text" th:field="*{fullName}" placeholder="input full name"><br>
+        <input id="fullName" type="text" th:field="${people.fullName}" placeholder="input full name"><br>
 
         <label for="country">Country:</label>
-        <input id="country" type="text" th:field="*{country}" placeholder="input country"><br>
+        <input id="country" type="text" th:field="${people.country}" placeholder="input country"><br>
 
         <label for="phone">Phone:</label>
-        <input id="phone" type="text" th:field="*{number}" placeholder="input phone"><br>
+        <input id="phone" type="text" th:field="${people.number}" placeholder="input phone"><br>
 
         <input type="submit" value="Submit">
         <button>
